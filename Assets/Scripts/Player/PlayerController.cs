@@ -6,7 +6,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private MovementComponent movementComp;
+    //private MovementComponent movementComp;
+
+    //void Start()
+    //{
+    //    GameObject playerCharacterObj = GameObject.FindGameObjectWithTag("Player");
+    //    if (playerCharacterObj == null)
+    //    {
+    //        Debug.Log("Player object not found");
+    //        return;
+    //    }
+
+    //    movementComp = playerCharacterObj.GetComponent<MovementComponent>();
+    //    if (movementComp == null)
+    //    {
+    //        Debug.Log("Player movement component not found");
+    //        return;
+    //    }
+    //}
+
+    //void Update()
+    //{
+    //    movementComp.RequestMoveForward(Input.GetAxis("Vertical"));
+    //    movementComp.RequestRotateRight(Input.GetAxis("Horizontal"));
+    //    if (Input.GetButton("Jump")) { movementComp.RequestJump(); }
+
+    //}
+
+    private PhysicsMovementComponent physicsMovementComp;
 
     void Start()
     {
@@ -16,9 +43,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Player object not found");
             return;
         }
-
-        movementComp = playerCharacterObj.GetComponent<MovementComponent>();
-        if (movementComp == null)
+        physicsMovementComp = playerCharacterObj.GetComponent<PhysicsMovementComponent>();
+        if (physicsMovementComp == null)
         {
             Debug.Log("Player movement component not found");
             return;
@@ -27,11 +53,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        movementComp.RequestMoveForward(Input.GetAxis("Vertical"));
-        movementComp.RequestRotateRight(Input.GetAxis("Horizontal"));
-        if (Input.GetButton("Jump")) { movementComp.RequestJump(); }
+        physicsMovementComp.RequestMoveForward(Input.GetAxis("Vertical"));
+        physicsMovementComp.RequestMoveRight(Input.GetAxis("Horizontal"));
+        if (Input.GetButton("Jump")) { physicsMovementComp.RequestJump(); }
 
     }
-
 }
 

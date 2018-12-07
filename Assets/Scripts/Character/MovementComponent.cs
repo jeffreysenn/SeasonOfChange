@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MovementState
-{
-    Grounding,
-    Jumping,
-    Switching,
-};
+
 
 [RequireComponent(typeof(CharacterController))]
 public class MovementComponent : MonoBehaviour
