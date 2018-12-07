@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EggDeath : MonoBehaviour {
-
-	void OnCollisonENter (Collider col)
+	
+	private void OnCollisonEnter (Collider col)
 	{
 		if (col.CompareTag("DeathTerrain"))
 		{
