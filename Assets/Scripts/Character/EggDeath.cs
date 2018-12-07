@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EggDeath : MonoBehaviour {
-
-	void EggCollision(Collision col)
+	
+	private void OnCollisonEnter (Collider col)
 	{
-		if (col.gameObject.name == "DeathTerrain")
+		if (col.CompareTag("DeathTerrain"))
 		{
-			Destroy(col.gameObject);
+			//Instantiate (explode, transform.position, transform.rotation);
+			//Destroy
+			print("Meow");
 		}
 	}
 }
