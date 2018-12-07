@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EggDeath : MonoBehaviour {
 
-	void EggCollision(Collision col)
+	void OnCollisonENter (Collider col)
 	{
-		if (col.gameObject.name == "DeathTerrain")
+		if (col.CompareTag("DeathTerrain"))
 		{
-			Destroy(col.gameObject);
+			//Instantiate (explode, transform.position, transform.rotation);
+			//Destroy
+			print("Meow");
 		}
 	}
 }
