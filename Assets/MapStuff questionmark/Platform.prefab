@@ -9,54 +9,54 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1527876139486850}
+  m_RootGameObject: {fileID: 1507383313149806}
   m_IsPrefabAsset: 1
---- !u!1 &1527876139486850
+--- !u!1 &1507383313149806
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4270204937239676}
-  - component: {fileID: 218750008116784704}
-  - component: {fileID: 154556477541152940}
+  - component: {fileID: 4901984321906096}
+  - component: {fileID: 218261966379214262}
+  - component: {fileID: 154216881624383024}
   m_Layer: 0
-  m_Name: Terrain (1)
+  m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &4270204937239676
+--- !u!4 &4901984321906096
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1527876139486850}
+  m_GameObject: {fileID: 1507383313149806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -51.2, y: -32.5, z: -50.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!154 &154556477541152940
+--- !u!154 &154216881624383024
 TerrainCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1527876139486850}
+  m_GameObject: {fileID: 1507383313149806}
   m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: fd1bdb9180db8ed4a921f3d1cf7172bd, type: 2}
   m_EnableTreeColliders: 1
---- !u!218 &218750008116784704
+--- !u!218 &218261966379214262
 Terrain:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1527876139486850}
+  m_GameObject: {fileID: 1507383313149806}
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: fd1bdb9180db8ed4a921f3d1cf7172bd, type: 2}
