@@ -3,12 +3,19 @@ guid: 9d62b936debe0004ab7ddeed24d01e4e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Egg
+    100002: Egg Collider
+    100004: //RootNode
+    400000: Egg
+    400002: Egg Collider
+    400004: //RootNode
     2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Sphere001
+    2300000: Egg
+    2300002: Egg Collider
+    3300000: Egg
+    3300002: Egg Collider
+    4300000: Egg
+    4300002: Egg Collider
   externalObjects: {}
   materials:
     importMaterials: 1
