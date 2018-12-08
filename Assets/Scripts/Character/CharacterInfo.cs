@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo : MonoBehaviour {
+public class CharacterInfo : MonoBehaviour {
 
-    public float playerIndex = 1;
+    public int playerIndex = 1;
 
     public Color color;
 	// Use this for initialization

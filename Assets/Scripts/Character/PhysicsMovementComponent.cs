@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(CharacterInfo))]
 public class PhysicsMovementComponent : MonoBehaviour {
 
     public float forceForward = 10;
@@ -12,12 +13,15 @@ public class PhysicsMovementComponent : MonoBehaviour {
     public float speedDash = 10;
     public float dashCoolDown = .5f;
     public float speedSlam = 20;
+    public float slamRadius = 30;
+    public float slamImpactSpeed = 40;
 
     public float airControlForward = .5f;
     public float airControlRight = .5f;
 
-    public float groundCheckExtraRadius = -.01f;
-    public float groundCheckOvershoot = .1f;
+    public float groundCheckPercent = 1.1f;
+
+    public LayerMask layerMask;
 
     private bool shouldJump = false, shouldDash = false;
     private bool shouldSlam = false;
@@ -29,25 +33,25 @@ public class PhysicsMovementComponent : MonoBehaviour {
     private bool haveJumpDashed = false;
     private float dashTimer = 0;
 
-    // Use this for initialization
     void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (!IsMovingOnGround()) { Debug.Log("not on ground"); }
+    }
 
     private void FixedUpdate()
     {
-        if (!IsMovingOnGround()) { state = MovementState.Jumping; }
-
         switch (state)
         {
             case MovementState.Grounding:
                 MoveForward(verticleAxisValue);
                 MoveRight(horizontalAxisValue);
+                if (!IsMovingOnGround())
+                {
+                    state = MovementState.Jumping;
+                }
                 if (shouldJump)
                 {
                     Jump();
@@ -58,7 +62,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
                     Dash();
                     state = MovementState.Dashing;
                 }
-                
+                ClearRequests();
                 break;
             case MovementState.Jumping:
                 MoveForward(airControlForward * verticleAxisValue);
@@ -91,14 +95,28 @@ public class PhysicsMovementComponent : MonoBehaviour {
                 ClearRequests();
                 break;
             case MovementState.Slamming:
-                shouldSlam = false;
-                if(GetComponent<Rigidbody>().velocity.y > Physics.gravity.y) { state = MovementState.Slamming; }
+                if (IsMovingOnGround())
+                {
+                    Collider[] outAffectedPlayers = new Collider[4];
+                    int affectedPlayersNum = Physics.OverlapSphereNonAlloc(transform.position, slamRadius, outAffectedPlayers, layerMask);
+                    for (int i = 0; i < affectedPlayersNum; i++)
+                    {
+                        if (outAffectedPlayers[i].gameObject == gameObject) { continue; }
+                        if (outAffectedPlayers[i].GetComponent<Rigidbody>() != null)
+                        {
+                            Vector3 selfToOther = outAffectedPlayers[i].GetComponent<Renderer>().bounds.center - GetLowestPoint();
+                            Vector3 velocity = selfToOther.normalized * slamImpactSpeed / Mathf.Sqrt(selfToOther.magnitude);
+                            outAffectedPlayers[i].GetComponent<Rigidbody>().velocity = velocity / outAffectedPlayers[i].GetComponent<Rigidbody>().mass;
+                        }
+                    }
+                    state = MovementState.Jumping;
+                }
+                ClearRequests();
                 break;
 
             default:
                 break;
         }
-
         GetComponent<Rigidbody>().AddForce(force);
     }
 
@@ -111,25 +129,42 @@ public class PhysicsMovementComponent : MonoBehaviour {
     {
         shouldJump = false;
         shouldDash = false;
+        shouldSlam = false;
     }
 
     private void MoveForward(float axisValue) { force.z = axisValue * forceForward; }
     private void MoveRight(float axisValue) { force.x = axisValue * forceRight; }
     private void Jump() { GetComponent<Rigidbody>().velocity = Vector3.up * speedJump; }
     public void Dash() { GetComponent<Rigidbody>().velocity = force.normalized * speedDash; }
-    public void Slam() { GetComponent<Rigidbody>().velocity = new Vector3(0, speedSlam, 0); }
+
+    public void Slam() { GetComponent<Rigidbody>().velocity = -Vector3.up * speedSlam; }
 
     public bool IsMovingOnGround()
     {
-        Ray ray = new Ray(GetComponent<Renderer>().bounds.center + Vector3.up * (GetCapsuleHalfHeight() - GetGroundCheckRadius()), -Vector3.up);
-        return Physics.SphereCast(ray, GetGroundCheckRadius(), 2 * (GetCapsuleHalfHeight() - GetGroundCheckRadius()) + GetGroundCheckOvershoot());
-    }
-    private float GetCapsuleCylinderHalfHeight() { return (GetComponent<CapsuleCollider>().height / 2 - GetComponent<CapsuleCollider>().radius) * transform.localScale.y; }
-    private float GetCapsuleRadius() { return GetComponent<CapsuleCollider>().radius * Mathf.Max(transform.localScale.x, transform.localScale.z); }
-    private float GetCapsuleHalfHeight() { return GetComponent<CapsuleCollider>().height / 2 * transform.localScale.y; }
-    private float GetGroundCheckRadius() { return (GetComponent<CapsuleCollider>().radius - groundCheckExtraRadius) * Mathf.Max(transform.localScale.x, transform.localScale.z); }
-    private float GetGroundCheckOvershoot() { return groundCheckOvershoot * transform.localScale.y; }
+        RaycastHit outHit;
+        if (Physics.Raycast(transform.TransformPoint(GetComponent<CapsuleCollider>().center), Vector3.down,out outHit, 10f))
+        {
+            Vector3 point0 = transform.TransformPoint(GetComponent<CapsuleCollider>().center + Vector3.down * (GetComponent<CapsuleCollider>().height / 2 - GetComponent<CapsuleCollider>().radius));
+            Vector3 point1 = transform.TransformPoint(GetComponent<CapsuleCollider>().center + Vector3.up * (GetComponent<CapsuleCollider>().height / 2 - GetComponent<CapsuleCollider>().radius));
 
+            Collider[] cols = Physics.OverlapCapsule(point0, point1, GetComponent<CapsuleCollider>().radius * groundCheckPercent * transform.localScale.x, ~layerMask);
+            foreach(Collider col in cols)
+            {
+                if(col.transform == outHit.transform)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private Vector3 GetLowestPoint()
+    {
+        Vector3 center = GetComponent<Renderer>().bounds.center;
+        float radius = GetComponent<Renderer>().bounds.extents.magnitude;
+        return center - Vector3.up * radius;
+    }
 
     public MovementState GetMovementState() { return state; }
 }
