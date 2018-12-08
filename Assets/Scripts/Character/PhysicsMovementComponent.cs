@@ -10,8 +10,8 @@ public class PhysicsMovementComponent : MonoBehaviour {
     public float forceRight = 10;
     public float speedJump = 8;
     public float speedDash = 10;
+    public float dashCoolDown = .5f;
     public float speedSlam = 20;
-    public float speedStopDash = 5;
 
     public float airControlForward = .5f;
     public float airControlRight = .5f;
@@ -26,7 +26,8 @@ public class PhysicsMovementComponent : MonoBehaviour {
 
     private MovementState state = MovementState.Jumping;
 
-
+    private bool haveJumpDashed = false;
+    private float dashTimer = 0;
 
     // Use this for initialization
     void Start () {
@@ -40,6 +41,8 @@ public class PhysicsMovementComponent : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (!IsMovingOnGround()) { state = MovementState.Jumping; }
+
         switch (state)
         {
             case MovementState.Grounding:
@@ -58,24 +61,34 @@ public class PhysicsMovementComponent : MonoBehaviour {
                 
                 break;
             case MovementState.Jumping:
-                shouldJump = false;
                 MoveForward(airControlForward * verticleAxisValue);
                 MoveRight(airControlRight * horizontalAxisValue);
+                if (IsMovingOnGround())
+                {
+                    haveJumpDashed = false;
+                    state = MovementState.Grounding;
+                }
                 if (shouldSlam)
                 {
                     Slam();
                     state = MovementState.Slamming;
                 }
-                if (shouldDash)
+                if (shouldDash && !haveJumpDashed)
                 {
                     Dash();
+                    haveJumpDashed = true;
                     state = MovementState.Dashing;
                 }
-                if (IsMovingOnGround()) { state = MovementState.Grounding; }
+                ClearRequests();
                 break;
             case MovementState.Dashing:
-                shouldDash = false;
-                if(GetComponent<Rigidbody>().velocity.magnitude < speedStopDash) { state = MovementState.Jumping; }
+                dashTimer += Time.fixedDeltaTime;
+                if(dashTimer > dashCoolDown)
+                {
+                    dashTimer = 0;
+                    state = MovementState.Jumping;
+                }
+                ClearRequests();
                 break;
             case MovementState.Slamming:
                 shouldSlam = false;
@@ -85,6 +98,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
             default:
                 break;
         }
+
         GetComponent<Rigidbody>().AddForce(force);
     }
 
@@ -93,6 +107,11 @@ public class PhysicsMovementComponent : MonoBehaviour {
     public void RequestJump() { shouldJump = true; }
     public void RequestDash() { shouldDash = true; }
     public void RequestSlam() { shouldSlam = true; }
+    private void ClearRequests()
+    {
+        shouldJump = false;
+        shouldDash = false;
+    }
 
     private void MoveForward(float axisValue) { force.z = axisValue * forceForward; }
     private void MoveRight(float axisValue) { force.x = axisValue * forceRight; }
@@ -100,9 +119,9 @@ public class PhysicsMovementComponent : MonoBehaviour {
     public void Dash() { GetComponent<Rigidbody>().velocity = force.normalized * speedDash; }
     public void Slam() { GetComponent<Rigidbody>().velocity = new Vector3(0, -speedSlam, 0); }
 
-    private bool IsMovingOnGround()
+    public bool IsMovingOnGround()
     {
-        Ray ray = new Ray(transform.position + Vector3.up * (GetCapsuleHalfHeight() - GetGroundCheckRadius()), -Vector3.up);
+        Ray ray = new Ray(GetComponent<Renderer>().bounds.center + Vector3.up * (GetCapsuleHalfHeight() - GetGroundCheckRadius()), -Vector3.up);
         return Physics.SphereCast(ray, GetGroundCheckRadius(), 2 * (GetCapsuleHalfHeight() - GetGroundCheckRadius()) + GetGroundCheckOvershoot());
     }
     private float GetCapsuleCylinderHalfHeight() { return (GetComponent<CapsuleCollider>().height / 2 - GetComponent<CapsuleCollider>().radius) * transform.localScale.y; }
@@ -111,4 +130,6 @@ public class PhysicsMovementComponent : MonoBehaviour {
     private float GetGroundCheckRadius() { return (GetComponent<CapsuleCollider>().radius - groundCheckExtraRadius) * Mathf.Max(transform.localScale.x, transform.localScale.z); }
     private float GetGroundCheckOvershoot() { return groundCheckOvershoot * transform.localScale.y; }
 
+
+    public MovementState GetMovementState() { return state; }
 }
