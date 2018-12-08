@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     //}
 
-    public float playerIndex = 1;
+    public int playerIndex = 1;
 
     private GameObject playerCharacterObj;
 
@@ -50,10 +50,10 @@ public class PlayerController : MonoBehaviour
         //if (Input.GetButton("Jump")) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestJump(); }
         //if (Input.GetButton("Dash")) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestDash(); }
 
-        GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestMoveForward(-Input.GetAxis(string.Format("Pad{0}_LS_Vertical", playerIndex)));
-        GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestMoveRight(Input.GetAxis(string.Format("Pad{0}_LS_Horizontal", playerIndex)));
-        if (Input.GetButton(string.Format("Pad{0}_A", playerIndex))) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestJump(); }
-        if (Input.GetButton(string.Format("Pad{0}_B", playerIndex))) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestDash(); }
+        GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestMoveForward(GamePadManager.GamePad(playerIndex).LeftStick.X);
+        GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestMoveRight(GamePadManager.GamePad(playerIndex).LeftStick.Y);
+        if (GamePadManager.GamePad(playerIndex).A.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestJump(); }
+        if (GamePadManager.GamePad(playerIndex).B.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestDash(); }
     }
 
     public bool FindPlayerCharacter(out GameObject playerCharacterObj)
