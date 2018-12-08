@@ -16,6 +16,8 @@ public class MovementComponent : MonoBehaviour
     public float rotationRate = .1f;
 
 
+
+
     private Vector3 velocity = Vector3.zero;
     private bool shouldJump;
     private float verticleAxisValue, honrizontalAxisValue;

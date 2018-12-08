@@ -6,5 +6,6 @@ public enum MovementState
 {
     Grounding,
     Jumping,
-    Switching,
+    Dashing
+
 };

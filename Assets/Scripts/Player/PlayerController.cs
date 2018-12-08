@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
         physicsMovementComp.RequestMoveForward(Input.GetAxis("Vertical"));
         physicsMovementComp.RequestMoveRight(Input.GetAxis("Horizontal"));
         if (Input.GetButton("Jump")) { physicsMovementComp.RequestJump(); }
+        if (Input.GetButton("Dash")) { physicsMovementComp.RequestDash(); }
+
 
     }
 }
