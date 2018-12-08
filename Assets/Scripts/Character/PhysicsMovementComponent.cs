@@ -10,6 +10,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
     public float forceRight = 10;
     public float speedJump = 8;
     public float speedDash = 10;
+    public float speedSlam = 20;
     public float speedStopDash = 5;
 
     public float airControlForward = .5f;
@@ -19,6 +20,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
     public float groundCheckOvershoot = .1f;
 
     private bool shouldJump = false, shouldDash = false;
+    private bool shouldSlam = false;
     private float verticleAxisValue, horizontalAxisValue;
     private Vector3 force = Vector3.zero;
 
@@ -59,6 +61,11 @@ public class PhysicsMovementComponent : MonoBehaviour {
                 shouldJump = false;
                 MoveForward(airControlForward * verticleAxisValue);
                 MoveRight(airControlRight * horizontalAxisValue);
+                if (shouldSlam)
+                {
+                    Slam();
+                    state = MovementState.Slamming;
+                }
                 if (shouldDash)
                 {
                     Dash();
@@ -69,6 +76,10 @@ public class PhysicsMovementComponent : MonoBehaviour {
             case MovementState.Dashing:
                 shouldDash = false;
                 if(GetComponent<Rigidbody>().velocity.magnitude < speedStopDash) { state = MovementState.Jumping; }
+                break;
+            case MovementState.Slamming:
+                shouldSlam = false;
+                if(GetComponent<Rigidbody>().velocity.y > Physics.gravity.y) { state = MovementState.Slamming; }
                 break;
 
             default:
@@ -81,11 +92,13 @@ public class PhysicsMovementComponent : MonoBehaviour {
     public void RequestMoveRight(float axisValue) { horizontalAxisValue = axisValue; }
     public void RequestJump() { shouldJump = true; }
     public void RequestDash() { shouldDash = true; }
+    public void RequestSlam() { shouldSlam = true; }
 
     private void MoveForward(float axisValue) { force.z = axisValue * forceForward; }
     private void MoveRight(float axisValue) { force.x = axisValue * forceRight; }
     private void Jump() { GetComponent<Rigidbody>().velocity = Vector3.up * speedJump; }
     public void Dash() { GetComponent<Rigidbody>().velocity = force.normalized * speedDash; }
+    public void Slam() { GetComponent<Rigidbody>().velocity = new Vector3(0, -speedSlam, 0); }
 
     private bool IsMovingOnGround()
     {
