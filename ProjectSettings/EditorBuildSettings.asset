@@ -11,7 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 1882249a3e128f640ae1bdc1f350de63
+  - enabled: 0
+    path: Assets/Scenes/temp.unity
+    guid: 4b04a9496c8ff6442acd3217ea8508ac
+  - enabled: 0
+    path: Assets/Scenes/Axscene.unity
+    guid: 9fa00958aa3f7ac4db1642861beee2e5
   - enabled: 1
     path: Assets/Scenes/StefanScene.unity
-    guid: 4b04a9496c8ff6442acd3217ea8508ac
+    guid: 7daa8ba264975a34197856a35689fa3c
   m_configObjects: {}

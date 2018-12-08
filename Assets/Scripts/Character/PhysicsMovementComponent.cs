@@ -117,7 +117,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
     private void MoveRight(float axisValue) { force.x = axisValue * forceRight; }
     private void Jump() { GetComponent<Rigidbody>().velocity = Vector3.up * speedJump; }
     public void Dash() { GetComponent<Rigidbody>().velocity = force.normalized * speedDash; }
-    public void Slam() { GetComponent<Rigidbody>().velocity = new Vector3(0, -speedSlam, 0); }
+    public void Slam() { GetComponent<Rigidbody>().velocity = new Vector3(0, speedSlam, 0); }
 
     public bool IsMovingOnGround()
     {
