@@ -19,8 +19,6 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
-    - time: 0.31666666
       value: {fileID: 2100000, guid: 31fd402d1371f9941b939c68b7e157b4, type: 2}
     - time: 4
       value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
@@ -30,8 +28,6 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
-    - time: 0.31666666
       value: {fileID: 2100000, guid: 31fd402d1371f9941b939c68b7e157b4, type: 2}
     - time: 4
       value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
@@ -41,13 +37,92 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
-    - time: 0.31666666
       value: {fileID: 2100000, guid: 31fd402d1371f9941b939c68b7e157b4, type: 2}
     - time: 4.016667
       value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
     attribute: m_Materials.Array.data[0]
     path: Foliage1/SM_AllmightyPlane (2)
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 649ad6ce824687844bb5216efe279e51, type: 2}
+    - time: 4.033334
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (1)/SM_AllmightyPlane
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 649ad6ce824687844bb5216efe279e51, type: 2}
+    - time: 4.0500007
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (1)/SM_AllmightyPlane (1)
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 649ad6ce824687844bb5216efe279e51, type: 2}
+    - time: 4.0666676
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (1)/SM_AllmightyPlane (2)
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 6f259ccc462d23443a9d6f13d410866c, type: 2}
+    - time: 4.0833344
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (2)/SM_AllmightyPlane
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 6f259ccc462d23443a9d6f13d410866c, type: 2}
+    - time: 4.1000013
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (2)/SM_AllmightyPlane (1)
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 6f259ccc462d23443a9d6f13d410866c, type: 2}
+    - time: 4.116668
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (2)/SM_AllmightyPlane (2)
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: aed00a39223c27640ba9bc70fed01f69, type: 2}
+    - time: 4.133335
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (3)/SM_AllmightyPlane
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: aed00a39223c27640ba9bc70fed01f69, type: 2}
+    - time: 4.150002
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (3)/SM_AllmightyPlane (1)
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: aed00a39223c27640ba9bc70fed01f69, type: 2}
+    - time: 4.166669
+      value: {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Foliage1 (3)/SM_AllmightyPlane (2)
     classID: 23
     script: {fileID: 0}
   m_SampleRate: 60
@@ -78,22 +153,100 @@ AnimationClip:
       typeID: 23
       customType: 21
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1190229000
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 932390046
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 482244445
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 3914873282
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1871547830
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1151393397
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 2352939652
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 4004046993
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 3313875794
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
     pptrCurveMapping:
+    - {fileID: 2100000, guid: 31fd402d1371f9941b939c68b7e157b4, type: 2}
     - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
     - {fileID: 2100000, guid: 31fd402d1371f9941b939c68b7e157b4, type: 2}
     - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
-    - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
     - {fileID: 2100000, guid: 31fd402d1371f9941b939c68b7e157b4, type: 2}
     - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    - {fileID: 2100000, guid: 649ad6ce824687844bb5216efe279e51, type: 2}
     - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
-    - {fileID: 2100000, guid: 31fd402d1371f9941b939c68b7e157b4, type: 2}
+    - {fileID: 2100000, guid: 649ad6ce824687844bb5216efe279e51, type: 2}
+    - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    - {fileID: 2100000, guid: 649ad6ce824687844bb5216efe279e51, type: 2}
+    - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    - {fileID: 2100000, guid: 6f259ccc462d23443a9d6f13d410866c, type: 2}
+    - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    - {fileID: 2100000, guid: 6f259ccc462d23443a9d6f13d410866c, type: 2}
+    - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    - {fileID: 2100000, guid: 6f259ccc462d23443a9d6f13d410866c, type: 2}
+    - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    - {fileID: 2100000, guid: aed00a39223c27640ba9bc70fed01f69, type: 2}
+    - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    - {fileID: 2100000, guid: aed00a39223c27640ba9bc70fed01f69, type: 2}
+    - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
+    - {fileID: 2100000, guid: aed00a39223c27640ba9bc70fed01f69, type: 2}
     - {fileID: 2100000, guid: 712eb0021d34b254fa4771247c12593c, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.033334
+    m_StopTime: 4.183336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
