@@ -22,6 +22,7 @@ public class RoundController : MonoBehaviour {
         }
         else {
             Debug.LogError("There should only be one RoundController!");
+            Destroy(this);
         }
 
 
@@ -39,18 +40,19 @@ public class RoundController : MonoBehaviour {
 
     }
 
-    public void PlayerDeathCallback(PlayerController player) {
-        PlayerInfo info = _players[player];
+    static public void PlayerDeathCallback(PlayerController player) {
+        RoundController instance = Instance;
+        PlayerInfo info = instance._players[player];
         info.IsActive = false;
 
-        _players[player] = info;
+        instance._players[player] = info;
 
 
-        if (_playerCount > 1) {
-            _playerCount--;
+        if (instance._playerCount > 1) {
+            instance._playerCount--;
         }
         else {
-            NewRound();
+            instance.NewRound();
         }
     }
 

@@ -23,14 +23,14 @@ public class GamePadManager : MonoBehaviour {
         }
         gamepads_ = new GamePadController.Controller[4];
 
-        gamepads_[1] = GamePadController.GamePadOne;
-        gamepads_[2] = GamePadController.GamePadTwo;
-        gamepads_[3] = GamePadController.GamePadThree;
-        gamepads_[4] = GamePadController.GamePadFour;
+        gamepads_[0] = GamePadController.GamePadOne;
+        gamepads_[1] = GamePadController.GamePadTwo;
+        gamepads_[2] = GamePadController.GamePadThree;
+        gamepads_[3] = GamePadController.GamePadFour;
     }
 
     GamePadController.Controller GetGamePad(int playerIndex) {
-        return gamepads_[playerIndex];
+        return gamepads_[playerIndex-1];
     }
 
     public static GamePadController.Controller GamePad(int playerIndex) {
