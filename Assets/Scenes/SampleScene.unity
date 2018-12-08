@@ -502,27 +502,27 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -51.2
+      value: -51.199997
       objectReference: {fileID: 0}
     - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -35.7
+      value: -35.699997
       objectReference: {fileID: 0}
     - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -50.8
+      value: -50.799995
       objectReference: {fileID: 0}
     - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
       propertyPath: m_LocalRotation.w
@@ -542,6 +542,18 @@ Prefab:
       value: 
       objectReference: {fileID: 15600000, guid: fd1bdb9180db8ed4a921f3d1cf7172bd,
         type: 2}
+    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2650719f145723749863b5d609bc25b9, type: 2}
   m_IsPrefabAsset: 0
