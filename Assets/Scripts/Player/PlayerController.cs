@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         ResetCharacter();
         return;
-        seasonController = GameObject.FindGameObjectWithTag("SeasonController").GetComponent<SeasonController>();
+        
     }
 
     void Update()
@@ -95,13 +95,13 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeCharacter()
     {
-        if((seasonController.GetCurrentSeason()) == SEASON.COMMUNISM)
+        if((GameObject.FindGameObjectWithTag("SeasonController").GetComponent<SeasonController>().GetCurrentSeason()) == SEASON.COMMUNISM)
         {
             if (isMonster) { return; }
             TurnIntoCharacter(ref monster, monsterSpawnOffset);
             isMonster = true;
         }
-        else if((seasonController.GetCurrentSeason()) == (SEASON) (playerIndex-1))
+        else if((GameObject.FindGameObjectWithTag("SeasonController").GetComponent<SeasonController>().GetCurrentSeason()) == (SEASON) (playerIndex-1))
         {
             if (isMonster) { return; }
             TurnIntoCharacter(ref monster, monsterSpawnOffset);

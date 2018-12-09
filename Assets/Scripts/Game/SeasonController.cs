@@ -50,13 +50,14 @@ public class SeasonController : MonoBehaviour {
     public void SetSeason(SEASON inSeason)
     {
         _season = inSeason;
-        OnSeasonChange();
+        if (OnSeasonChange != null) { OnSeasonChange(); }
     }
 
     public void IncreaseSeasonAmount()
     {
         seasonAmount++;
         gameObject.GetComponent<Animator>().SetInteger("seasonAmount", seasonAmount);
+
     }
 
     public void RandomSeasonStart()
