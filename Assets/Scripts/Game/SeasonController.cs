@@ -8,18 +8,16 @@ public enum SEASON
     SUMMER,
     AUTUMN,
     WINTER,
-    COMMUNISM
+    COMMUNISM,
+    NoSeason
 }
 
 public class SeasonController : MonoBehaviour {
 
     SEASON _season;
 
-    public float seasonDuration_ = 15;
-
     public delegate void SeasonChange();
     public static SeasonChange OnSeasonChange;
-
 
     private float seasonTimer = 0;
     private SEASON originSeason;
@@ -49,7 +47,11 @@ public class SeasonController : MonoBehaviour {
 
     public SEASON GetCurrentSeason() { return _season; }
 
-    public void SetSeason(SEASON inSeason) { _season = inSeason; }
+    public void SetSeason(SEASON inSeason)
+    {
+        _season = inSeason;
+        OnSeasonChange();
+    }
 
     public void IncreaseSeasonAmount()
     {
