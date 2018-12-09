@@ -20,6 +20,7 @@ public class SeasonController : MonoBehaviour {
     public delegate void SeasonChange();
     public static SeasonChange OnSeasonChange;
 
+
     private float seasonTimer = 0;
     private SEASON originSeason;
     private int seasonAmount = 0;
@@ -46,16 +47,11 @@ public class SeasonController : MonoBehaviour {
 
     public SEASON GetCurrentSeason() { return _season; }
 
-    public void SetSeason(SEASON inSeason)
+    public void IncreaseSeasonAmount()
     {
-        _season = inSeason;
-        if (OnSeasonChange != null) { OnSeasonChange(); }
-    }
-
-    public void IncreaseSeasonAmount() { seasonAmount++; }
-
-    private void Update()
-    {
+        seasonAmount++;
+        OnSeasonAmountChange();
         gameObject.GetComponent<Animator>().SetInteger("seasonAmount", seasonAmount);
     }
+
 }
