@@ -26,7 +26,8 @@ public class PhysicsMovementComponent : MonoBehaviour
     //public static event EnterSlamming OnEnterSlamming;
     //public static event ExitSlamming OnExitSlamming;
 
-
+    public delegate void DealtDamage();
+    public static DealtDamage OnDealtDamage;
 
     public float speedForwardMin = .5f;
     public float speedRightMin = .5f;
@@ -154,6 +155,7 @@ public class PhysicsMovementComponent : MonoBehaviour
                             outAffectedPlayers[i].GetComponent<CharacterInfo>().ragePercent += ComputeDamageToApply(slamImpactVelocity.magnitude);
                             // Vibration for players affected by slam
                             GamePadManager.GamePad(outAffectedPlayers[i].GetComponent<CharacterInfo>().playerIndex).SetVibration(1 - (1 / outAffectedPlayers[i].GetComponent<Rigidbody>().velocity.magnitude), 1 - (1 / outAffectedPlayers[i].GetComponent<Rigidbody>().velocity.magnitude), 0.3f);
+                            OnDealtDamage();
                         }
                     }
                     state = MovementState.Jumping;
