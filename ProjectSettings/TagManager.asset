@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DeathTerrain
   - SeasonController
+  - PlayerController
   layers:
   - Default
   - TransparentFX

@@ -193,6 +193,16 @@ Prefab:
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 678b664165ff997448d3bc71c0b94f1d, type: 2}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: monsterSpawnOffset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: readyTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
@@ -273,6 +283,1209 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 40.123, y: 0.8, z: 0}
+--- !u!1 &409931432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409931434}
+  - component: {fileID: 409931433}
+  m_Layer: 0
+  m_Name: GamePadController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &409931433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409931432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e38085260199c042a0b627196bf6bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 1
+  DebugParameters:
+    ControllersConnected: 00000000
+    DebugGamePad_N: 0
+    Messages: Debug not enabled.
+    CurrentButton: No input detected.
+    LeftStick: {x: 0, y: 0}
+    RightStick: {x: 0, y: 0}
+    LeftTrigger: 0
+    RightTrigger: 0
+    A: 0
+    B: 0
+    X: 0
+    Y: 0
+    LB: 0
+    RB: 0
+    Start: 0
+    Select: 0
+    R3: 0
+    L3: 0
+    UP: 0
+    DOWN: 0
+    LEFT: 0
+    RIGHT: 3
+  useComputerInputs: 0
+  enableController: 01000000
+  computerControllers:
+  - controllerId: 0
+    inputsEnabled: 1
+    ButtonA:
+      buttonName: Button A
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonB:
+      buttonName: Button B
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonX:
+      buttonName: Button X
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonY:
+      buttonName: Button Y
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonUP:
+      buttonName: UP
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonDOWN:
+      buttonName: Down
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonLEFT:
+      buttonName: Left
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonRIGHT:
+      buttonName: Right
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonR3:
+      buttonName: Button R3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonL3:
+      buttonName: Button L3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightButton:
+      buttonName: Button RB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftButton:
+      buttonName: Button LB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    start:
+      buttonName: Start
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    select:
+      buttonName: Select
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightTrigger:
+      buttonName: RightTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftTrigger:
+      buttonName: LeftTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickX:
+      buttonName: RightStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickY:
+      buttonName: RightStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickX:
+      buttonName: LeftStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickY:
+      buttonName: LeftStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    debugString: 0
+    targetInspector: {fileID: 0}
+  - controllerId: 1
+    inputsEnabled: 0
+    ButtonA:
+      buttonName: Button A
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonB:
+      buttonName: Button B
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonX:
+      buttonName: Button X
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonY:
+      buttonName: Button Y
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonUP:
+      buttonName: UP
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonDOWN:
+      buttonName: Down
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonLEFT:
+      buttonName: Left
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonRIGHT:
+      buttonName: Right
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonR3:
+      buttonName: Button R3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonL3:
+      buttonName: Button L3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightButton:
+      buttonName: Button RB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftButton:
+      buttonName: Button LB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    start:
+      buttonName: Start
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    select:
+      buttonName: Select
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightTrigger:
+      buttonName: RightTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftTrigger:
+      buttonName: LeftTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickX:
+      buttonName: RightStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickY:
+      buttonName: RightStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickX:
+      buttonName: LeftStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickY:
+      buttonName: LeftStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    debugString: 0
+    targetInspector: {fileID: 0}
+  - controllerId: 2
+    inputsEnabled: 0
+    ButtonA:
+      buttonName: Button A
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonB:
+      buttonName: Button B
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonX:
+      buttonName: Button X
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonY:
+      buttonName: Button Y
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonUP:
+      buttonName: UP
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonDOWN:
+      buttonName: Down
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonLEFT:
+      buttonName: Left
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonRIGHT:
+      buttonName: Right
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonR3:
+      buttonName: Button R3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonL3:
+      buttonName: Button L3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightButton:
+      buttonName: Button RB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftButton:
+      buttonName: Button LB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    start:
+      buttonName: Start
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    select:
+      buttonName: Select
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightTrigger:
+      buttonName: RightTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftTrigger:
+      buttonName: LeftTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickX:
+      buttonName: RightStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickY:
+      buttonName: RightStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickX:
+      buttonName: LeftStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickY:
+      buttonName: LeftStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    debugString: 0
+    targetInspector: {fileID: 0}
+  - controllerId: 3
+    inputsEnabled: 0
+    ButtonA:
+      buttonName: Button A
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonB:
+      buttonName: Button B
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonX:
+      buttonName: Button X
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonY:
+      buttonName: Button Y
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonUP:
+      buttonName: UP
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonDOWN:
+      buttonName: Down
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonLEFT:
+      buttonName: Left
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonRIGHT:
+      buttonName: Right
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonR3:
+      buttonName: Button R3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonL3:
+      buttonName: Button L3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightButton:
+      buttonName: Button RB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftButton:
+      buttonName: Button LB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    start:
+      buttonName: Start
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    select:
+      buttonName: Select
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightTrigger:
+      buttonName: RightTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftTrigger:
+      buttonName: LeftTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickX:
+      buttonName: RightStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickY:
+      buttonName: RightStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickX:
+      buttonName: LeftStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickY:
+      buttonName: LeftStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    debugString: 0
+    targetInspector: {fileID: 0}
+--- !u!4 &409931434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409931432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3660855, y: 3.437758, z: -9.4558735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &491116533
 Prefab:
   m_ObjectHideFlags: 0
@@ -315,6 +1528,21 @@ Prefab:
     - target: {fileID: 1962029343423946, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_Name
       value: PlayerController (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: playerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: monsterSpawnOffset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: readyTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
@@ -404,6 +1632,21 @@ Prefab:
       propertyPath: m_Name
       value: PlayerController (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: playerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: monsterSpawnOffset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: readyTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
@@ -492,6 +1735,56 @@ Prefab:
       propertyPath: m_Name
       value: PlayerController (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: monsterSpawnOffset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: readyTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1963665497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963665499}
+  - component: {fileID: 1963665498}
+  m_Layer: 0
+  m_Name: GamePadManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1963665498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963665497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71c985af6df430409841768d6c5a850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1963665499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963665497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3660855, y: 3.437758, z: -9.4558735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
