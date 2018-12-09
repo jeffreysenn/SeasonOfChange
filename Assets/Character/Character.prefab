@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99f7e26b66243b40a6cfada1c8c04af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 0
+  playerIndex: 1
+  ragePercent: 0
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114750645550986754
 MonoBehaviour:
@@ -126,18 +127,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c03e1f5e73e674d9ea1c887935ba92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceForward: 10
-  forceRight: 10
-  speedJump: 8
-  speedDash: 20
+  forceForward: 20
+  forceRight: 20
+  speedJump: 6
+  speedDash: 10
+  dashPush: 0.5
   dashCoolDown: 0.5
-  speedSlam: 10
-  slamRadius: 5
-  slamImpactSpeed: 40
+  speedSlam: 20
+  slamRadius: 30
+  slamImpactSpeed: 20
   airControlForward: 0.5
   airControlRight: 0.5
-  groundCheckExtraRadius: -0.01
-  groundCheckOvershoot: 0.1
+  attackMod: 1
+  groundCheckPercent: 1.1
   layerMask:
     serializedVersion: 2
     m_Bits: 512

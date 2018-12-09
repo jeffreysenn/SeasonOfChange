@@ -11,6 +11,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
     public float forceRight = 10;
     public float speedJump = 8;
     public float speedDash = 10;
+    public float dashPush = 2;
     public float dashCoolDown = .5f;
     public float speedSlam = 20;
     public float slamRadius = 30;
@@ -18,6 +19,8 @@ public class PhysicsMovementComponent : MonoBehaviour {
 
     public float airControlForward = .5f;
     public float airControlRight = .5f;
+
+    public float attackMod = 1;
 
     public float groundCheckPercent = 1.1f;
 
@@ -38,7 +41,6 @@ public class PhysicsMovementComponent : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (!IsMovingOnGround()) { Debug.Log("not on ground"); }
     }
 
     private void FixedUpdate()
@@ -92,6 +94,12 @@ public class PhysicsMovementComponent : MonoBehaviour {
                     dashTimer = 0;
                     state = MovementState.Jumping;
                 }
+                foreach(Collider col in GetDashedColliders())
+                {
+                    if(col.gameObject == gameObject) { continue; }
+                    col.gameObject.GetComponent<Rigidbody>().velocity = ComputeVectorSelfBottomToObj(col.gameObject).normalized * dashPush * GetComponent<Rigidbody>().velocity.magnitude * ComputePushModifier(col.gameObject);
+                    col.gameObject.GetComponent<CharacterInfo>().ragePercent += ComputeDamageToApply(dashPush * GetComponent<Rigidbody>().velocity.magnitude);
+                }
                 ClearRequests();
                 break;
             case MovementState.Slamming:
@@ -106,7 +114,9 @@ public class PhysicsMovementComponent : MonoBehaviour {
                         {
                             Vector3 selfToOther = outAffectedPlayers[i].GetComponent<Renderer>().bounds.center - GetLowestPoint();
                             Vector3 velocity = selfToOther.normalized * slamImpactSpeed / Mathf.Sqrt(selfToOther.magnitude);
-                            outAffectedPlayers[i].GetComponent<Rigidbody>().velocity = velocity / outAffectedPlayers[i].GetComponent<Rigidbody>().mass;
+                            outAffectedPlayers[i].GetComponent<Rigidbody>().velocity = ComputePushModifier(outAffectedPlayers[i].gameObject) * velocity;
+                            outAffectedPlayers[i].GetComponent<CharacterInfo>().ragePercent += ComputeDamageToApply(velocity.magnitude);
+
                         }
                     }
                     state = MovementState.Jumping;
@@ -135,7 +145,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
     private void MoveForward(float axisValue) { force.z = axisValue * forceForward; }
     private void MoveRight(float axisValue) { force.x = axisValue * forceRight; }
     private void Jump() { GetComponent<Rigidbody>().velocity = Vector3.up * speedJump; }
-    public void Dash() { GetComponent<Rigidbody>().velocity = force.normalized * speedDash; }
+    public void Dash() { GetComponent<Rigidbody>().velocity += force.normalized * speedDash; }
 
     public void Slam() { GetComponent<Rigidbody>().velocity = -Vector3.up * speedSlam; }
 
@@ -159,6 +169,11 @@ public class PhysicsMovementComponent : MonoBehaviour {
         return false;
     }
 
+    private Vector3 ComputeVectorSelfBottomToObj(GameObject obj)
+    {
+        return obj.GetComponent<Renderer>().bounds.center - GetLowestPoint();
+    }
+
     private Vector3 GetLowestPoint()
     {
         Vector3 center = GetComponent<Renderer>().bounds.center;
@@ -166,5 +181,25 @@ public class PhysicsMovementComponent : MonoBehaviour {
         return center - Vector3.up * radius;
     }
 
+    private Collider[] GetDashedColliders()
+    {
+        Vector3 point0 = transform.TransformPoint(GetComponent<CapsuleCollider>().center + Vector3.down * (GetComponent<CapsuleCollider>().height / 2 - GetComponent<CapsuleCollider>().radius));
+        Vector3 point1 = transform.TransformPoint(GetComponent<CapsuleCollider>().center + Vector3.up * (GetComponent<CapsuleCollider>().height / 2 - GetComponent<CapsuleCollider>().radius));
+
+        Collider[] cols = Physics.OverlapCapsule(point0, point1, GetComponent<CapsuleCollider>().radius * groundCheckPercent * transform.localScale.x, layerMask);
+        return cols;
+    }
+
+
     public MovementState GetMovementState() { return state; }
+
+    public float ComputePushModifier(GameObject obj)
+    {
+        return (1 + obj.GetComponent<CharacterInfo>().ragePercent / 100) * (1 + GetComponent<CharacterInfo>().ragePercent / 100) / obj.GetComponent<Rigidbody>().mass;
+    }
+
+    public float ComputeDamageToApply(float damage)
+    {
+        return (1+GetComponent<CharacterInfo>().ragePercent/100) * damage * attackMod;
+    }
 }

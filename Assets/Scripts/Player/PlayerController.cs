@@ -7,8 +7,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int playerIndex = 1;
+    public bool isMonster = false;
 
     private GameObject playerCharacterObj;
+
+
 
     void Start()
     {
@@ -23,7 +26,7 @@ public class PlayerController : MonoBehaviour
         GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestMoveRight(GamePadManager.GamePad(playerIndex).LeftStick.X);
         if (GamePadManager.GamePad(playerIndex).A.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestJump(); }
         if (GamePadManager.GamePad(playerIndex).B.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestDash(); }
-        if (GamePadManager.GamePad(playerIndex).X.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestSlam(); }
+        if (isMonster && GamePadManager.GamePad(playerIndex).X.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestSlam(); }
         if (GamePadManager.GamePad(playerIndex).Y.Pressed) { GamePadManager.GamePad(playerIndex).SetVibration(100, 100, 0.5f); }
     }
 

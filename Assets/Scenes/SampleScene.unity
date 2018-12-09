@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657534, g: 0.49641103, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,194 +113,1446 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &170076733
+--- !u!1 &45699836
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 170076735}
-  - component: {fileID: 170076734}
+  - component: {fileID: 45699838}
+  - component: {fileID: 45699837}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: GamePadManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &170076734
-Light:
+--- !u!114 &45699837
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 170076733}
+  m_GameObject: {fileID: 45699836}
   m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.5
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &170076735
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71c985af6df430409841768d6c5a850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &45699838
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_GameObject: {fileID: 45699836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3660855, y: 3.437758, z: -9.4558735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &534669902
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 534669905}
-  - component: {fileID: 534669904}
-  - component: {fileID: 534669903}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &534669903
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
---- !u!20 &534669904
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &534669905
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.42396954, y: -0, z: -0, w: 0.9056765}
-  m_LocalPosition: {x: 0, y: 12.47, z: -17.17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50.171, y: 0, z: 0}
---- !u!1001 &1216413347
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &175414020
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4229666429321404, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.1954193
+      value: 3.27
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4229666429321404, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.69908524
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4229666429321404, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 12.829678
+      value: -12.25
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4229666429321404, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4229666429321404, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.14474693
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4229666429321404, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4229666429321404, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.98946875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229666429321404, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334472802275352, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
+      propertyPath: m_Name
+      value: Season Controller 1 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fd9d0407dfe414049a0e00c6f39d0654, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &207147540
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.815792
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.4147367
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
       propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: playerIndex
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1035562036332334, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 114750645550986754, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: groundCheckFromTo.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750645550986754, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: groundCheckFromTo.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399192511809114, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
       propertyPath: m_Name
-      value: Tree (6)
+      value: Character (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: color.g
+      value: 0.23381662
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &417792245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 417792247}
+  - component: {fileID: 417792246}
+  m_Layer: 0
+  m_Name: GamePadController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &417792246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417792245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e38085260199c042a0b627196bf6bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 1
+  DebugParameters:
+    ControllersConnected: 00000000
+    DebugGamePad_N: 0
+    Messages: Debug not enabled.
+    CurrentButton: No input detected.
+    LeftStick: {x: 0, y: 0}
+    RightStick: {x: 0, y: 0}
+    LeftTrigger: 0
+    RightTrigger: 0
+    A: 0
+    B: 0
+    X: 0
+    Y: 0
+    LB: 0
+    RB: 0
+    Start: 0
+    Select: 0
+    R3: 0
+    L3: 0
+    UP: 0
+    DOWN: 0
+    LEFT: 0
+    RIGHT: 3
+  useComputerInputs: 0
+  enableController: 01000000
+  computerControllers:
+  - controllerId: 0
+    inputsEnabled: 1
+    ButtonA:
+      buttonName: Button A
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonB:
+      buttonName: Button B
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonX:
+      buttonName: Button X
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonY:
+      buttonName: Button Y
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonUP:
+      buttonName: UP
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonDOWN:
+      buttonName: Down
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonLEFT:
+      buttonName: Left
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonRIGHT:
+      buttonName: Right
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonR3:
+      buttonName: Button R3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonL3:
+      buttonName: Button L3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightButton:
+      buttonName: Button RB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftButton:
+      buttonName: Button LB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    start:
+      buttonName: Start
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    select:
+      buttonName: Select
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightTrigger:
+      buttonName: RightTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftTrigger:
+      buttonName: LeftTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickX:
+      buttonName: RightStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickY:
+      buttonName: RightStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickX:
+      buttonName: LeftStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickY:
+      buttonName: LeftStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    debugString: 0
+    targetInspector: {fileID: 0}
+  - controllerId: 1
+    inputsEnabled: 0
+    ButtonA:
+      buttonName: Button A
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonB:
+      buttonName: Button B
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonX:
+      buttonName: Button X
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonY:
+      buttonName: Button Y
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonUP:
+      buttonName: UP
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonDOWN:
+      buttonName: Down
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonLEFT:
+      buttonName: Left
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonRIGHT:
+      buttonName: Right
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonR3:
+      buttonName: Button R3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonL3:
+      buttonName: Button L3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightButton:
+      buttonName: Button RB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftButton:
+      buttonName: Button LB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    start:
+      buttonName: Start
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    select:
+      buttonName: Select
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightTrigger:
+      buttonName: RightTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftTrigger:
+      buttonName: LeftTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickX:
+      buttonName: RightStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickY:
+      buttonName: RightStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickX:
+      buttonName: LeftStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickY:
+      buttonName: LeftStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    debugString: 0
+    targetInspector: {fileID: 0}
+  - controllerId: 2
+    inputsEnabled: 0
+    ButtonA:
+      buttonName: Button A
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonB:
+      buttonName: Button B
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonX:
+      buttonName: Button X
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonY:
+      buttonName: Button Y
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonUP:
+      buttonName: UP
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonDOWN:
+      buttonName: Down
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonLEFT:
+      buttonName: Left
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonRIGHT:
+      buttonName: Right
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonR3:
+      buttonName: Button R3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonL3:
+      buttonName: Button L3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightButton:
+      buttonName: Button RB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftButton:
+      buttonName: Button LB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    start:
+      buttonName: Start
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    select:
+      buttonName: Select
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightTrigger:
+      buttonName: RightTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftTrigger:
+      buttonName: LeftTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickX:
+      buttonName: RightStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickY:
+      buttonName: RightStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickX:
+      buttonName: LeftStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickY:
+      buttonName: LeftStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    debugString: 0
+    targetInspector: {fileID: 0}
+  - controllerId: 3
+    inputsEnabled: 0
+    ButtonA:
+      buttonName: Button A
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonB:
+      buttonName: Button B
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonX:
+      buttonName: Button X
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonY:
+      buttonName: Button Y
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonUP:
+      buttonName: UP
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonDOWN:
+      buttonName: Down
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonLEFT:
+      buttonName: Left
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonRIGHT:
+      buttonName: Right
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonR3:
+      buttonName: Button R3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    ButtonL3:
+      buttonName: Button L3
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightButton:
+      buttonName: Button RB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftButton:
+      buttonName: Button LB
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    start:
+      buttonName: Start
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    select:
+      buttonName: Select
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightTrigger:
+      buttonName: RightTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftTrigger:
+      buttonName: LeftTrigger
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickX:
+      buttonName: RightStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    RightStickY:
+      buttonName: RightStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickX:
+      buttonName: LeftStickX
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    LeftStickY:
+      buttonName: LeftStickY
+      inputType: 1
+      inputName: 
+      inputDir: 0
+      axisValue: 0
+      showSlider: 0
+      inputSetup: 0
+      absoluteVal: 1
+      buttonState: 3
+      Pressed: 0
+      Released: 0
+      Held: 0
+      Zero: 1
+    debugString: 0
+    targetInspector: {fileID: 0}
+--- !u!4 &417792247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417792245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3660855, y: 3.437758, z: -9.4558735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &773190229
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.815792
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.4147367
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: playerIndex
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750645550986754, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: groundCheckFromTo.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750645550986754, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: groundCheckFromTo.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399192511809114, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
+      propertyPath: m_Name
+      value: Character (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: color.b
+      value: 0.13257027
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1309119323
 Prefab:
@@ -339,61 +1591,76 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114083111345981820, guid: bcbbedaae5624f141bcc39314cdc6788,
         type: 2}
       propertyPath: playerIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114750645550986754, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: groundCheckFromTo.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750645550986754, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: groundCheckFromTo.y
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1311189831
+--- !u!1001 &1375737368
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.1444473
+      value: 11.02
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.69908524
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9.781578
+      value: 6.87
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1035562036332334, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: playerIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962029343423946, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_Name
-      value: Tree (2)
+      value: PlayerController (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1410656705
 Prefab:
@@ -432,7 +1699,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1962029343423946, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_Name
@@ -443,8 +1710,55 @@ Prefab:
       propertyPath: playerIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: isMonster
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &1440933191
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4090724793348218, guid: 6f2911603046e054b875272fc37651a5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090724793348218, guid: 6f2911603046e054b875272fc37651a5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090724793348218, guid: 6f2911603046e054b875272fc37651a5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090724793348218, guid: 6f2911603046e054b875272fc37651a5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090724793348218, guid: 6f2911603046e054b875272fc37651a5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090724793348218, guid: 6f2911603046e054b875272fc37651a5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090724793348218, guid: 6f2911603046e054b875272fc37651a5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090724793348218, guid: 6f2911603046e054b875272fc37651a5, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f2911603046e054b875272fc37651a5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1532321287
 Prefab:
@@ -483,7 +1797,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
         type: 2}
@@ -493,245 +1807,56 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1554737058
+--- !u!1001 &1964602097
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -51.199997
+      value: 11.02
       objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -35.699997
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -50.799995
+      value: 6.87
       objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
+    - target: {fileID: 4609796915105298, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 1507383313149806, guid: 2650719f145723749863b5d609bc25b9, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 154216881624383024, guid: 2650719f145723749863b5d609bc25b9,
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
         type: 2}
-      propertyPath: m_TerrainData
-      value: 
-      objectReference: {fileID: 15600000, guid: fd1bdb9180db8ed4a921f3d1cf7172bd,
-        type: 2}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4901984321906096, guid: 2650719f145723749863b5d609bc25b9, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2650719f145723749863b5d609bc25b9, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1618109786
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 13.375011
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.69908524
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 4.809822
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035562036332334, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_Name
-      value: Tree (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1627353155
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.267914
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.69908524
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -4.4922295
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1642975713
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -15.644596
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.69908524
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.16752243
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_RootOrder
+      propertyPath: playerIndex
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1035562036332334, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
+    - target: {fileID: 1962029343423946, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_Name
-      value: Tree (4)
+      value: PlayerController (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1757348077
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4939626129683030, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -101.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939626129683030, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -34.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939626129683030, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -101.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939626129683030, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939626129683030, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939626129683030, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939626129683030, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939626129683030, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a165eb50df8b4b54087edabb43257f9d, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &2028773684
 Prefab:
@@ -770,7 +1895,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4886237099531540, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1399192511809114, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
       propertyPath: m_Name
@@ -796,52 +1921,88 @@ Prefab:
       propertyPath: playerIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114750645550986754, guid: bcbbedaae5624f141bcc39314cdc6788,
+        type: 2}
+      propertyPath: groundCheckPercent
+      value: 1.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcbbedaae5624f141bcc39314cdc6788, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &2094998157
-Prefab:
+--- !u!1 &2032707596
+GameObject:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2032707599}
+  - component: {fileID: 2032707598}
+  - component: {fileID: 2032707597}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &2032707597
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032707596}
+  m_Enabled: 1
+--- !u!20 &2032707598
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032707596}
+  m_Enabled: 1
   serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 9.418339
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.0700951
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -9.422283
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137093482450304, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035562036332334, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-      propertyPath: m_Name
-      value: Tree (8)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13e9cc442e92caf458eb0153bdf1d5bc, type: 2}
-  m_IsPrefabAsset: 0
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.1267355, g: 0.19484988, b: 0.3018868, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 88
+  orthographic: 0
+  orthographic size: 10.61
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &2032707599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032707596}
+  m_LocalRotation: {x: 0.34302852, y: 0, z: 0, w: 0.939325}
+  m_LocalPosition: {x: -0.7, y: 9.1, z: -19.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 40.123, y: 0, z: 0}

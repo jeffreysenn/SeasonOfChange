@@ -6,6 +6,8 @@ public class CharacterInfo : MonoBehaviour {
 
     public int playerIndex = 1;
 
+    public float ragePercent = 0;
+
     public Color color;
 	// Use this for initialization
 	void Start () {
