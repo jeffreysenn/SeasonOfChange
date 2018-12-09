@@ -2,63 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SEASON
+{
+    SPRING,
+    SUMMER,
+    AUTUMN,
+    WINTER,
+    COMMUNISM
+}
+
 public class SeasonController : MonoBehaviour {
 
     SEASON _season;
 
-    public float _timer;
-    public float seasonDuration_;
+    public float seasonDuration_ = 15;
 
-	void Start () {
-        _season = (SEASON)Random.Range(1, 6);
-        OnSeasonEnter(_season);
+    public delegate void SeasonChange();
+    public static SeasonChange OnSeasonChange;
+
+    private float seasonTimer = 0;
+    private SEASON originSeason;
+    private int seasonAmount = 0;
+
+	void Start ()
+    {
+        _season = (SEASON)Random.Range(0, 4);
+        originSeason = _season;
+        if (OnSeasonChange != null) { OnSeasonChange(); }
 	}
 
-    void SetSeason(SEASON newSeason) {
-        OnSeasonExit(_season);
-        OnSeasonEnter(newSeason);
-        _season = newSeason;
+    //private void Update()
+    //{
+    //    seasonTimer += Time.deltaTime;
+    //    if(seasonTimer > seasonDuration_ && _season != SEASON.COMMUNISM)
+    //    {
+            
+    //        if((SEASON)(((int)(_season + 1)) % 4) == originSeason) { _season = SEASON.COMMUNISM; }
+    //        else { _season = (SEASON)(((int)(_season + 1)) % 4); }
+    //        seasonTimer = 0;
+    //        if(OnSeasonChange != null) { OnSeasonChange(); }
+    //    }
+    //}
+
+    public SEASON GetCurrentSeason() { return _season; }
+
+    public void SetSeason(SEASON inSeason)
+    {
+        _season = inSeason;
+        if (OnSeasonChange != null) { OnSeasonChange(); }
     }
 
-    void OnSeasonEnter(SEASON newSeason) {
-        switch (newSeason) {
-            case SEASON.SPRING:
-                break;
-            case SEASON.SUMMER:
-                break;
-            case SEASON.AUTUMN:
-                break;
-            case SEASON.WINTER:
-                break;
-            case SEASON.COMMUNISM:
-                break;
-            default:
-                break;
-        }
-    }
+    public void IncreaseSeasonAmount() { seasonAmount++; }
 
-    void OnSeasonExit(SEASON newSeason) {
-        switch (newSeason) {
-            case SEASON.SPRING:
-                break;
-            case SEASON.SUMMER:
-                break;
-            case SEASON.AUTUMN:
-                break;
-            case SEASON.WINTER:
-                break;
-            case SEASON.COMMUNISM:
-                break;
-            default:
-                break;
-            }
-        }
-
-    enum SEASON {
-        SPRING = 1,
-        SUMMER = 2,
-        AUTUMN = 3,
-        WINTER = 4,
-        COMMUNISM = 5
+    private void Update()
+    {
+        gameObject.GetComponent<Animator>().SetInteger("seasonAmount", seasonAmount);
     }
 }
