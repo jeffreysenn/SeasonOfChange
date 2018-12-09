@@ -7,23 +7,23 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterInfo))]
 public class PhysicsMovementComponent : MonoBehaviour {
 
-    public delegate void EnterGrounding();
-    public delegate void ExitGrounding();
-    public delegate void EnterJumping();
-    public delegate void ExitJumping();
-    public delegate void EnterDashing();
-    public delegate void ExitDashing();
-    public delegate void EnterSlamming();
-    public delegate void ExitSlamming();
+    //public delegate void EnterGrounding();
+    //public delegate void ExitGrounding();
+    //public delegate void EnterJumping();
+    //public delegate void ExitJumping();
+    //public delegate void EnterDashing();
+    //public delegate void ExitDashing();
+    //public delegate void EnterSlamming();
+    //public delegate void ExitSlamming();
 
-    public static event EnterGrounding OnEnterGrounding;
-    public static event ExitGrounding OnExitGrounding;
-    public static event EnterJumping OnEnterJumping;
-    public static event ExitJumping OnExitJumping;
-    public static event EnterDashing OnEnterDashing;
-    public static event ExitDashing OnExitDashing;
-    public static event EnterSlamming OnEnterSlamming;
-    public static event ExitSlamming OnExitSlamming;
+    //public static event EnterGrounding OnEnterGrounding;
+    //public static event ExitGrounding OnExitGrounding;
+    //public static event EnterJumping OnEnterJumping;
+    //public static event ExitJumping OnExitJumping;
+    //public static event EnterDashing OnEnterDashing;
+    //public static event ExitDashing OnExitDashing;
+    //public static event EnterSlamming OnEnterSlamming;
+    //public static event ExitSlamming OnExitSlamming;
 
 
 
@@ -136,8 +136,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
                             if(outAffectedPlayers[i].GetComponent<Renderer>().bounds.center.y > GetLowestPoint().y + slamHeightLimit) { continue; }
                             Vector3 selfToOther = outAffectedPlayers[i].GetComponent<Renderer>().bounds.center - GetLowestPoint();
                             Vector3 slamImpactVelocity = selfToOther.normalized * slamImpactSpeedMax * Mathf.Lerp(0, 1, (slamRadius - selfToOther.magnitude) / slamRadius);
-                            Debug.Log(slamImpactVelocity);
-                            outAffectedPlayers[i].GetComponent<Rigidbody>().AddForce(ComputePushModifier(outAffectedPlayers[i].gameObject) * slamImpactVelocity);
+                            outAffectedPlayers[i].GetComponent<Rigidbody>().AddForce(ComputePushModifier(outAffectedPlayers[i].gameObject) * slamImpactVelocity, ForceMode.VelocityChange);
                             outAffectedPlayers[i].GetComponent<CharacterInfo>().ragePercent += ComputeDamageToApply(slamImpactVelocity.magnitude);
 
                         }

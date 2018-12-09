@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int playerIndex = 1;
+    public int communistIndex = 5;
     public Color color;
     public bool isMonster = false;
     public GameObject initialCharacterObj;
@@ -15,15 +16,27 @@ public class PlayerController : MonoBehaviour
 
 
     private GameObject playerCharacterObj;
+    private SeasonController seasonController;
 
+    private void OnEnable()
+    {
+        SeasonController.OnSeasonChange += ChangeCharacter;
+    }
 
-    void Start()
+    private void OnDisable()
+    {
+        SeasonController.OnSeasonChange -= ChangeCharacter;
+    }
+
+    void Awake()
     {
         if(initialCharacterObj == null) { return; }
         GameObject characterToSet = GameObject.Instantiate(initialCharacterObj, transform.position, Quaternion.identity);
         characterToSet.GetComponent<CharacterInfo>().playerIndex = playerIndex;
         characterToSet.GetComponent<CharacterInfo>().color = color;
         PossessCharacter(ref characterToSet);
+
+        seasonController = GameObject.FindGameObjectWithTag("SeasonController").GetComponent<SeasonController>();
     }
 
     void Update()
@@ -69,6 +82,27 @@ public class PlayerController : MonoBehaviour
         characterToSet.GetComponent<CharacterInfo>().playerIndex = playerIndex;
         Destroy(GetPossessedCharacter());
         PossessCharacter(ref characterToSet);
+    }
+
+    private void ChangeCharacter()
+    {
+        if((seasonController.GetCurrentSeason()) == SEASON.COMMUNISM)
+        {
+            if (isMonster) { return; }
+            TurnIntoCharacter(ref monster, monsterSpawnOffset);
+            isMonster = true;
+        }
+        else if((seasonController.GetCurrentSeason()) == (SEASON) (playerIndex-1))
+        {
+            if (isMonster) { return; }
+            TurnIntoCharacter(ref monster, monsterSpawnOffset);
+            isMonster = true;
+        }
+        else if(isMonster)
+        {
+            TurnIntoCharacter(ref initialCharacterObj, Vector3.zero);
+            isMonster = false;
+        }
     }
 
 }
