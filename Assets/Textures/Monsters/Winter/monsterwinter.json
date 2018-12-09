@@ -1,0 +1,52 @@
+{
+    "format": {
+        "version": "1.0"
+    },
+    "shaders": {
+        "Main shader": {
+            "parameters": {
+                "Common Parameters": {
+                    "ao_intensity": 0.6700000166893005,
+                    "emissive_intensity": 29.290000915527344,
+                    "horizonFade": 1.1100000143051147,
+                    "nbSamples": 16
+                },
+                "Parallax Occlusion Mapping": {
+                    "maxPOMSamples": 16,
+                    "minPOMSamples": 4,
+                    "pomStrength": 1,
+                    "usePOM": false
+                },
+                "Subsurface Scattering Parameters": {
+                    "sssColor": [
+                        0.7009999752044678,
+                        0.3009999990463257,
+                        0.3050000071525574
+                    ],
+                    "sssEnabled": true,
+                    "sssScale": 0.5,
+                    "sssType": 1
+                }
+            },
+            "shader": "pbr-metal-rough",
+            "shaderInstance": "Main shader"
+        }
+    },
+    "texturesets": {
+        "Material _2": {
+            "shader": "Main shader"
+        },
+        "Teeth": {
+            "shader": "Main shader"
+        },
+        "egg": {
+            "shader": "Main shader"
+        },
+        "eyes": {
+            "shader": "Main shader"
+        },
+        "horn": {
+            "shader": "Main shader"
+        }
+    }
+}
