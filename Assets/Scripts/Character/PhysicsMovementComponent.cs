@@ -7,16 +7,37 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterInfo))]
 public class PhysicsMovementComponent : MonoBehaviour {
 
-    public float forceForward = 10;
-    public float forceRight = 10;
+    public delegate void EnterGrounding();
+    public delegate void ExitGrounding();
+    public delegate void EnterJumping();
+    public delegate void ExitJumping();
+    public delegate void EnterDashing();
+    public delegate void ExitDashing();
+    public delegate void EnterSlamming();
+    public delegate void ExitSlamming();
+
+    public static event EnterGrounding OnEnterGrounding;
+    public static event ExitGrounding OnExitGrounding;
+    public static event EnterJumping OnEnterJumping;
+    public static event ExitJumping OnExitJumping;
+    public static event EnterDashing OnEnterDashing;
+    public static event ExitDashing OnExitDashing;
+    public static event EnterSlamming OnEnterSlamming;
+    public static event ExitSlamming OnExitSlamming;
+
+
+
+    public float speedForwardMin = .5f;
+    public float speedRightMin = .5f;
+    public float maxSpeed = 3;
     public float speedJump = 8;
     public float speedDash = 10;
     public float dashPush = 2;
     public float dashCoolDown = .5f;
     public float speedSlam = 20;
-    public float slamRadius = 30;
-    public float slamImpactSpeed = 40;
-
+    public float slamRadius = 20;
+    public float slamHeightLimit = 2;
+    public float slamImpactSpeedMax = 100;
     public float airControlForward = .5f;
     public float airControlRight = .5f;
 
@@ -29,7 +50,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
     private bool shouldJump = false, shouldDash = false;
     private bool shouldSlam = false;
     private float verticleAxisValue, horizontalAxisValue;
-    private Vector3 force = Vector3.zero;
+    private Vector3 velocity = Vector3.zero;
 
     private MovementState state = MovementState.Jumping;
 
@@ -97,7 +118,7 @@ public class PhysicsMovementComponent : MonoBehaviour {
                 foreach(Collider col in GetDashedColliders())
                 {
                     if(col.gameObject == gameObject) { continue; }
-                    col.gameObject.GetComponent<Rigidbody>().velocity = ComputeVectorSelfBottomToObj(col.gameObject).normalized * dashPush * GetComponent<Rigidbody>().velocity.magnitude * ComputePushModifier(col.gameObject);
+                    col.gameObject.GetComponent<Rigidbody>().AddForce(ComputeVectorSelfBottomToObj(col.gameObject).normalized * dashPush * GetComponent<Rigidbody>().velocity.magnitude * ComputePushModifier(col.gameObject), ForceMode.VelocityChange);
                     col.gameObject.GetComponent<CharacterInfo>().ragePercent += ComputeDamageToApply(dashPush * GetComponent<Rigidbody>().velocity.magnitude);
                 }
                 ClearRequests();
@@ -110,12 +131,14 @@ public class PhysicsMovementComponent : MonoBehaviour {
                     for (int i = 0; i < affectedPlayersNum; i++)
                     {
                         if (outAffectedPlayers[i].gameObject == gameObject) { continue; }
-                        if (outAffectedPlayers[i].GetComponent<Rigidbody>() != null)
+                        else if (outAffectedPlayers[i].GetComponent<Rigidbody>() != null)
                         {
+                            if(outAffectedPlayers[i].GetComponent<Renderer>().bounds.center.y > GetLowestPoint().y + slamHeightLimit) { continue; }
                             Vector3 selfToOther = outAffectedPlayers[i].GetComponent<Renderer>().bounds.center - GetLowestPoint();
-                            Vector3 velocity = selfToOther.normalized * slamImpactSpeed / Mathf.Sqrt(selfToOther.magnitude);
-                            outAffectedPlayers[i].GetComponent<Rigidbody>().velocity = ComputePushModifier(outAffectedPlayers[i].gameObject) * velocity;
-                            outAffectedPlayers[i].GetComponent<CharacterInfo>().ragePercent += ComputeDamageToApply(velocity.magnitude);
+                            Vector3 slamImpactVelocity = selfToOther.normalized * slamImpactSpeedMax * Mathf.Lerp(0, 1, (slamRadius - selfToOther.magnitude) / slamRadius);
+                            Debug.Log(slamImpactVelocity);
+                            outAffectedPlayers[i].GetComponent<Rigidbody>().AddForce(ComputePushModifier(outAffectedPlayers[i].gameObject) * slamImpactVelocity);
+                            outAffectedPlayers[i].GetComponent<CharacterInfo>().ragePercent += ComputeDamageToApply(slamImpactVelocity.magnitude);
 
                         }
                     }
@@ -127,7 +150,8 @@ public class PhysicsMovementComponent : MonoBehaviour {
             default:
                 break;
         }
-        GetComponent<Rigidbody>().AddForce(force);
+
+        if (GetComponent<Rigidbody>().velocity.magnitude < maxSpeed) { GetComponent<Rigidbody>().AddForce(velocity, ForceMode.VelocityChange); }
     }
 
     public void RequestMoveForward(float axisValue) { verticleAxisValue = axisValue; }
@@ -142,12 +166,18 @@ public class PhysicsMovementComponent : MonoBehaviour {
         shouldSlam = false;
     }
 
-    private void MoveForward(float axisValue) { force.z = axisValue * forceForward; }
-    private void MoveRight(float axisValue) { force.x = axisValue * forceRight; }
-    private void Jump() { GetComponent<Rigidbody>().velocity = Vector3.up * speedJump; }
-    public void Dash() { GetComponent<Rigidbody>().velocity += force.normalized * speedDash; }
+    private void MoveForward(float axisValue) { velocity.z = axisValue * speedForwardMin; }
+    private void MoveRight(float axisValue) { velocity.x = axisValue * speedRightMin; }
+    private void Jump() { GetComponent<Rigidbody>().AddForce(Vector3.up * speedJump, ForceMode.VelocityChange); }
+    public void Dash() { GetComponent<Rigidbody>().AddForce(velocity.normalized * speedDash, ForceMode.VelocityChange); }
+    public void Slam()
+    {
+        //// absolute slam
+        //GetComponent<Rigidbody>().velocity = -Vector3.up * speedSlam;
 
-    public void Slam() { GetComponent<Rigidbody>().velocity = -Vector3.up * speedSlam; }
+        // relative slam
+        GetComponent<Rigidbody>().AddForce(-Vector3.up * speedSlam, ForceMode.VelocityChange);
+    }
 
     public bool IsMovingOnGround()
     {
