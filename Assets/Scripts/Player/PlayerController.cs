@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public int playerIndex = 1;
     public int communistIndex = 5;
-    public Color color;
+    public Material material;
     public bool isMonster = false;
     public GameObject initialCharacterObj;
     public GameObject monster;
@@ -28,14 +28,11 @@ public class PlayerController : MonoBehaviour
         SeasonController.OnSeasonChange -= ChangeCharacter;
     }
 
+
     void Awake()
     {
-        if(initialCharacterObj == null) { return; }
-        GameObject characterToSet = GameObject.Instantiate(initialCharacterObj, transform.position, Quaternion.identity);
-        characterToSet.GetComponent<CharacterInfo>().playerIndex = playerIndex;
-        characterToSet.GetComponent<CharacterInfo>().color = color;
-        PossessCharacter(ref characterToSet);
-
+        ResetCharacter();
+        return;
         seasonController = GameObject.FindGameObjectWithTag("SeasonController").GetComponent<SeasonController>();
     }
 
@@ -80,6 +77,7 @@ public class PlayerController : MonoBehaviour
         GameObject characterToSet = GameObject.Instantiate(character, GetPossessedCharacter().transform.position + spawnPositionOffset, Quaternion.identity);
         characterToSet.GetComponent<CharacterInfo>().ragePercent = GetPossessedCharacter().GetComponent<CharacterInfo>().ragePercent;
         characterToSet.GetComponent<CharacterInfo>().playerIndex = playerIndex;
+        characterToSet.GetComponent<MeshRenderer>().material = material;
         Destroy(GetPossessedCharacter());
         PossessCharacter(ref characterToSet);
     }
@@ -105,5 +103,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ResetCharacter()
+    {
+        if (initialCharacterObj == null) { return; }
+        GameObject characterToSet = GameObject.Instantiate(initialCharacterObj, transform.position, Quaternion.identity);
+        characterToSet.GetComponent<CharacterInfo>().playerIndex = playerIndex;
+        characterToSet.GetComponent<MeshRenderer>().material = material;
+        PossessCharacter(ref characterToSet);
+    }
 }
 

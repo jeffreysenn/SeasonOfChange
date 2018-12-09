@@ -47,10 +47,17 @@ public class SeasonController : MonoBehaviour {
 
     public SEASON GetCurrentSeason() { return _season; }
 
+    public void SetSeason(SEASON inSeason) { _season = inSeason; }
+
     public void IncreaseSeasonAmount()
     {
         seasonAmount++;
         gameObject.GetComponent<Animator>().SetInteger("seasonAmount", seasonAmount);
+    }
+
+    public void RandomSeasonStart()
+    {
+        gameObject.GetComponent<Animator>().SetInteger("SeasonStart", Random.Range(1,5));
     }
 
 }
