@@ -38,6 +38,24 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Spring
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Summer
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Autumn
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -57,7 +75,19 @@ AnimatorStateTransition:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: SpringDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: SummerDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: AutumnDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: WinterDone
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102715083304249356}
   m_Solo: 0
@@ -291,7 +321,19 @@ AnimatorStateTransition:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: SpringDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: SummerDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: AutumnDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: WinterDone
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102715083304249356}
   m_Solo: 0
@@ -312,7 +354,19 @@ AnimatorStateTransition:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: SpringDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: SummerDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: AutumnDone
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: WinterDone
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102715083304249356}
   m_Solo: 0
@@ -334,7 +388,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Spring
-  m_Speed: 1
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101636494581497594}
@@ -377,7 +431,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 9962e4c68f8705a48bbed4e0d8d98ce3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -390,7 +444,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Fall
-  m_Speed: 1
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101128267862471926}
@@ -417,7 +471,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Winter
-  m_Speed: 1
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101856005839972562}
@@ -444,7 +498,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Summer
-  m_Speed: 1
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101192799833271300}
@@ -511,10 +565,10 @@ AnimatorStateMachine:
     m_Position: {x: -336, y: 72, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102715083304249356}
-    m_Position: {x: 240, y: 108, z: 0}
+    m_Position: {x: 216, y: 108, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102421371765501930}
-    m_Position: {x: 372, y: 24, z: 0}
+    m_Position: {x: 432, y: 36, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -524,4 +578,4 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 564, y: -48, z: 0}
   m_ExitPosition: {x: 1104, y: 144, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102421371765501930}
+  m_DefaultState: {fileID: 1102715083304249356}
