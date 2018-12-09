@@ -7,14 +7,19 @@ public class RoundController : MonoBehaviour {
     static RoundController _instance;
     public static RoundController Instance {
         get {
+            if (!_instance) {
+                GameObject gbo = Instantiate(new GameObject("Round Controller"), new Vector3(0, 0, 0), Quaternion.identity);
+                _instance = gbo.AddComponent<RoundController>();
+            }
             return _instance;
         }
     }
 
     int _playerCount;
+    public int _pointsToWin = 3;
 
 
-    Dictionary<PlayerController, PlayerInfo> _players;
+    PlayerInfo[] _players;
 
 	void Start () {
         if (!_instance) {
@@ -26,13 +31,13 @@ public class RoundController : MonoBehaviour {
         }
 
 
-        _players = new Dictionary<PlayerController, PlayerInfo>();
 
-        PlayerController[] players = FindObjectsOfType<PlayerController>();
-        _playerCount = players.Length;
+        PlayerController[] temp = FindObjectsOfType<PlayerController>();
+        _playerCount = temp.Length;
+        _players = new PlayerInfo[_playerCount];
 
-        for (int i = 0; i < players.Length;) {
-            _players.Add(players[i], new PlayerInfo(i++, 0, true));
+        for (int i = 0; i < _playerCount; i++) {
+            SetPlayerInfo(temp[i].playerIndex, new PlayerInfo(0, true, temp[i]));
         }
     }
 
@@ -40,48 +45,61 @@ public class RoundController : MonoBehaviour {
 
     }
 
-    static public void PlayerDeathCallback(PlayerController player) {
-        RoundController instance = Instance;
-        PlayerInfo info = instance._players[player];
-        info.IsActive = false;
-
-        instance._players[player] = info;
-
-
-        if (instance._playerCount > 1) {
-            instance._playerCount--;
+    PlayerInfo GetPlayerInfo(int playerIndex) {
+        if(playerIndex <= _playerCount) {
+            return _players[playerIndex--];
         }
         else {
-            instance.NewRound();
+            Debug.LogError("GetPlayerInfo: playerIndex out of range.");
+            return _players[0];
+        }
+    }
+
+    void SetPlayerInfo(int playerIndex, PlayerInfo info) {
+        if (playerIndex <= _playerCount) {
+            _players[playerIndex--] = info;
+        }
+        else {
+            Debug.LogError("SetPlayerInfo: playerIndex out of range.");
+        }
+    }
+
+    static public void PlayerDeathCallback(int playerIndex) {
+        PlayerInfo info = Instance.GetPlayerInfo(playerIndex);
+        info.IsActive = false;
+
+        Instance.SetPlayerInfo(playerIndex, info);
+
+
+        if (Instance._playerCount > 1) {
+            Instance._playerCount--;
+        }
+        else {
+            Instance.NewRound();
         }
     }
 
     void NewRound() {
-        _playerCount = _players.Count;
+        _playerCount = _players.Length;
 
         PlayerInfo info;
 
-        foreach (var item in _players) {
-            info = item.Value;
+        for (int i = 1; i <= _playerCount; i++) {
+            info = GetPlayerInfo(i);
             if (info.IsActive) {
                 info.Score++;
+                if(info.Score >= _pointsToWin) {
+                    //TODO: Go to Victory screen.
+                    return;
+                }
             }
             info.IsActive = true;
-            _players[item.Key] = info;
-            //TODO: Respawn characters?.
+            SetPlayerInfo(i, info);
+            //TODO: Respawn characters.
         }
     }
 
     struct PlayerInfo {
-        int _id;
-        public int ID {
-            get {
-                return _id;
-            }
-            set {
-                _id = ID;
-            }
-        }
         int _score;
         public int Score {
             get {
@@ -100,12 +118,17 @@ public class RoundController : MonoBehaviour {
                 _isActive = IsActive;
             }
         }
+        PlayerController _controller;
+        public PlayerController Controller {
+            get {
+                return _controller;
+            }
+        }
 
-
-        public PlayerInfo(int id, int score, bool active) {
-            _id = id;
+        public PlayerInfo(int score, bool active, PlayerController controller) {
             _score = score;
             _isActive = active;
+            _controller = controller;
         }
     }
 }
