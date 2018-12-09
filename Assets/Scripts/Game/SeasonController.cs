@@ -50,7 +50,6 @@ public class SeasonController : MonoBehaviour {
     public void IncreaseSeasonAmount()
     {
         seasonAmount++;
-        OnSeasonAmountChange();
         gameObject.GetComponent<Animator>().SetInteger("seasonAmount", seasonAmount);
     }
 
