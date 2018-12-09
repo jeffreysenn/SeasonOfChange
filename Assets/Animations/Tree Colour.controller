@@ -11,7 +11,7 @@ AnimatorController:
   - m_Name: SeasonStart
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 2
+    m_DefaultInt: 1
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Spring
@@ -526,10 +526,10 @@ AnimatorStateMachine:
     m_Position: {x: -324, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102715083304249356}
-    m_Position: {x: 204, y: 108, z: 0}
+    m_Position: {x: 144, y: 132, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102421371765501930}
-    m_Position: {x: 372, y: 0, z: 0}
+    m_Position: {x: 408, y: -12, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
