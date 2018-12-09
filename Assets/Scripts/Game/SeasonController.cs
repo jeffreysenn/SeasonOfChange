@@ -24,12 +24,14 @@ public class SeasonController : MonoBehaviour {
     private float seasonTimer = 0;
     private SEASON originSeason;
     private int seasonAmount = 0;
+    private int readyPlayerNum = 0;
 
 	void Start ()
     {
         _season = (SEASON)Random.Range(0, 4);
         originSeason = _season;
         if (OnSeasonChange != null) { OnSeasonChange(); }
+
 	}
 
     //private void Update()
@@ -59,5 +61,22 @@ public class SeasonController : MonoBehaviour {
     {
         gameObject.GetComponent<Animator>().SetInteger("SeasonStart", Random.Range(1,5));
     }
+
+    public void ReportReady()
+    {
+        readyPlayerNum++;
+        if(readyPlayerNum > 4)
+        {
+        gameObject.GetComponent<Animator>().SetBool("isReady", true);
+
+        }
+    }
+
+
+
+    //public GameObject[] FindAllControllers()
+    //{
+    //    return GameObject.FindGameObjectsWithTag("PlayerController");
+    //}
 
 }

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public int playerIndex = 1;
     public int communistIndex = 5;
+    public float readyTime = 2;
     public Material material;
     public bool isMonster = false;
     public GameObject initialCharacterObj;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private GameObject playerCharacterObj;
     private SeasonController seasonController;
+    private float readyTimer = 0;
 
     private void OnEnable()
     {
@@ -45,7 +47,16 @@ public class PlayerController : MonoBehaviour
         if (GamePadManager.GamePad(playerIndex).A.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestJump(); }
         if (GamePadManager.GamePad(playerIndex).B.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestDash(); }
         if (isMonster && GamePadManager.GamePad(playerIndex).X.Pressed) { GetPossessedCharacter().GetComponent<PhysicsMovementComponent>().RequestSlam(); }
-        if (GamePadManager.GamePad(playerIndex).Y.Pressed) { GamePadManager.GamePad(playerIndex).SetVibration(100, 100, 0.5f); }
+
+
+        if (GamePadManager.GamePad(playerIndex).X.Held) { readyTimer += Time.deltaTime; }
+        if (GamePadManager.GamePad(playerIndex).X.Released) { readyTimer = 0; }
+        if(readyTimer > readyTime)
+        {
+            GameObject.FindGameObjectWithTag("SeasonController").GetComponent<SeasonController>().ReportReady();
+            readyTimer = 0;
+        }
+
     }
 
     public bool FindPlayerCharacter(out GameObject playerCharacterObj)
