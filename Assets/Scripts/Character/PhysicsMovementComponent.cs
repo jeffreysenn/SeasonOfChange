@@ -48,6 +48,10 @@ public class PhysicsMovementComponent : MonoBehaviour
 
     public LayerMask layerMask;
 
+    public AudioClip[] dashSound;
+    public AudioClip slamSound;
+    public AudioClip collSound;
+
     private bool shouldJump = false, shouldDash = false;
     private bool shouldSlam = false;
     private float verticleAxisValue, horizontalAxisValue;
@@ -86,6 +90,7 @@ public class PhysicsMovementComponent : MonoBehaviour
                 if (shouldDash)
                 {
                     Dash();
+                    SoundManager.PlaySFXRandomized(dashSound);
                     Vibrate(10, 0.2f);
                     state = MovementState.Dashing;
                 }
@@ -123,7 +128,8 @@ public class PhysicsMovementComponent : MonoBehaviour
                 }
                 foreach (Collider col in GetDashedColliders())
                 {
-                    if (col.gameObject == gameObject) { continue; }
+                    if(col.gameObject == gameObject) { continue; }
+                    SoundManager.PlaySFXRandomized(collSound);
                     col.gameObject.GetComponent<Rigidbody>().AddForce(ComputeVectorSelfBottomToObj(col.gameObject).normalized * dashPush * GetComponent<Rigidbody>().velocity.magnitude * ComputePushModifier(col.gameObject), ForceMode.VelocityChange);
                     col.gameObject.GetComponent<CharacterInfo>().ragePercent += ComputeDamageToApply(dashPush * GetComponent<Rigidbody>().velocity.magnitude);
                 }
@@ -132,6 +138,7 @@ public class PhysicsMovementComponent : MonoBehaviour
             case MovementState.Slamming:
                 if (IsMovingOnGround())
                 {
+                    SoundManager.PlaySFXRandomized(slamSound);
                     Vibrate((1 - (1 / GetComponent<Rigidbody>().velocity.magnitude)) * 100, 0.1f);
                     Collider[] outAffectedPlayers = new Collider[4];
                     int affectedPlayersNum = Physics.OverlapSphereNonAlloc(transform.position, slamRadius, outAffectedPlayers, layerMask);
