@@ -15,6 +15,8 @@ public class RoundController : MonoBehaviour {
         }
     }
 
+    public GameObject winScreen;
+
     int _playerCount;
     public int _pointsToWin = 3;
 
@@ -30,8 +32,14 @@ public class RoundController : MonoBehaviour {
             Destroy(this);
         }
 
+        winScreen.SetActive(false);
+
         _seasonController = FindObjectOfType<SeasonController>();
 
+        PlayerControllersInit();
+    }
+
+    void PlayerControllersInit() {
         PlayerController[] temp = FindObjectsOfType<PlayerController>();
         _playerCount = temp.Length;
         _players = new PlayerInfo[_playerCount];
@@ -39,10 +47,6 @@ public class RoundController : MonoBehaviour {
         for (int i = 0; i < _playerCount; i++) {
             SetPlayerInfo(temp[i].playerIndex, new PlayerInfo(0, true, temp[i]));
         }
-    }
-
-    void Update() {
-
     }
 
     static public PlayerInfo GetPlayerInfo(int playerIndex) {
@@ -93,13 +97,20 @@ public class RoundController : MonoBehaviour {
             if (info.IsActive) {
                 info.Score++;
                 if(info.Score >= _pointsToWin) {
-                    //TODO: Go to Victory screen.
+                    Victory(info.Controller);
                     return;
                 }
             }
             info.IsActive = true;
             SetPlayerInfo(i, info);
             info.Controller.ResetCharacter();
+        }
+    }
+
+    void Victory(PlayerController controller) {
+        winScreen.SetActive(true);
+        for (int i = 1; i <= _playerCount; i++) {
+            GetPlayerInfo(i).Controller.gameObject.SetActive(false);
         }
     }
 
