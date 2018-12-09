@@ -188,6 +188,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1244375559654604, guid: fca77328e619174448a4e1d8a6175bd5,
         type: 2}
+    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
+        type: 2}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: 678b664165ff997448d3bc71c0b94f1d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
@@ -311,33 +316,6 @@ Prefab:
       propertyPath: m_Name
       value: PlayerController (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: initialCharacterObj
-      value: 
-      objectReference: {fileID: 1244375559654604, guid: 5099a3cdbb2a8544c802eddc75e4ecaa,
-        type: 2}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: monster
-      value: 
-      objectReference: {fileID: 1244375559654604, guid: fca77328e619174448a4e1d8a6175bd5,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
@@ -422,32 +400,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: initialCharacterObj
-      value: 
-      objectReference: {fileID: 1244375559654604, guid: 5099a3cdbb2a8544c802eddc75e4ecaa,
-        type: 2}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: playerIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: isMonster
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1962029343423946, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_Name
       value: PlayerController (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: monster
-      value: 
-      objectReference: {fileID: 1244375559654604, guid: fca77328e619174448a4e1d8a6175bd5,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0
@@ -532,42 +488,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: playerIndex
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1962029343423946, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
       propertyPath: m_Name
       value: PlayerController (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: initialCharacterObj
-      value: 
-      objectReference: {fileID: 1244375559654604, guid: 5099a3cdbb2a8544c802eddc75e4ecaa,
-        type: 2}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: color.b
-      value: 0.7048378
-      objectReference: {fileID: 0}
-    - target: {fileID: 114068786703931968, guid: ac55844f84962fc4c84cf6248ce7eaf3,
-        type: 2}
-      propertyPath: monster
-      value: 
-      objectReference: {fileID: 1244375559654604, guid: fca77328e619174448a4e1d8a6175bd5,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac55844f84962fc4c84cf6248ce7eaf3, type: 2}
   m_IsPrefabAsset: 0

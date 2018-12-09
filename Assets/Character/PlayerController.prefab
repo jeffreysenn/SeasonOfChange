@@ -51,10 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef1cdc2642ac0d4fb5573ba5f53d9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 1
+  playerIndex: 3
   communistIndex: 5
   readyTime: 2
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: b429921a63fcf5944b4e97c665bb35dd, type: 2}
   isMonster: 0
   initialCharacterObj: {fileID: 1244375559654604, guid: 5099a3cdbb2a8544c802eddc75e4ecaa,
     type: 2}
