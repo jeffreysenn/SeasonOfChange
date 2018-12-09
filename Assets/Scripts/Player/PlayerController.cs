@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public int playerIndex = 1;
     public int communistIndex = 5;
-    public float readyTime = 2;
+    public float readyTime = 1;
     public Material material;
     public bool isMonster = false;
     public GameObject initialCharacterObj;
@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private GameObject playerCharacterObj;
     private SeasonController seasonController;
     private float readyTimer = 0;
+    private bool haveReportedReady = false;
+
 
     private void OnEnable()
     {
@@ -51,10 +53,12 @@ public class PlayerController : MonoBehaviour
 
         if (GamePadManager.GamePad(playerIndex).X.Held) { readyTimer += Time.deltaTime; }
         if (GamePadManager.GamePad(playerIndex).X.Released) { readyTimer = 0; }
-        if(readyTimer > readyTime)
+        if(readyTimer > readyTime && !haveReportedReady)
         {
             GameObject.FindGameObjectWithTag("SeasonController").GetComponent<SeasonController>().ReportReady();
             readyTimer = 0;
+            haveReportedReady = true;
+
         }
 
     }

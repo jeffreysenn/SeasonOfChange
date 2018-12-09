@@ -68,10 +68,9 @@ public class SeasonController : MonoBehaviour {
     public void ReportReady()
     {
         readyPlayerNum++;
-        if(readyPlayerNum > 4)
+        if(readyPlayerNum >= 4)
         {
-        gameObject.GetComponent<Animator>().SetBool("isReady", true);
-
+            gameObject.GetComponent<Animator>().SetBool("isReady", true);
         }
     }
 

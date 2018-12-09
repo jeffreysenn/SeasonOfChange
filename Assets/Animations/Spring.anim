@@ -7176,7 +7176,7 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0.98333335
-    functionName: GetCurrentSeason
+    functionName: SetSeason
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
