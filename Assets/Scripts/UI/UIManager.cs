@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour {
         for(int i = 0; i < playerControllers.Length; i++)
         {
             RageText[i].text = (Mathf.RoundToInt(playerControllers[i].GetComponent<PlayerController>().GetPossessedCharacter().GetComponent<CharacterInfo>().ragePercent)).ToString() + " %";
-            scoreText[i+1].text = "Score: " + RoundController.GetPlayerInfo(i).Score.ToString();
+            //scoreText[i+1].text = "Score: " + RoundController.GetPlayerInfo(i).Score.ToString();
         }
     }
 

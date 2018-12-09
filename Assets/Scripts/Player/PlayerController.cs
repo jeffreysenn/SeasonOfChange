@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
             haveReportedReady = true;
 
         }
+        if(GamePadManager.GamePad(playerIndex).Y.Pressed) { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
 
     }
 
