@@ -8,14 +8,4 @@ public class CharacterInfo : MonoBehaviour {
 
     public float ragePercent = 0;
 
-    public Color color;
-	// Use this for initialization
-	void Start () {
-        GetComponent<Renderer>().material.color = color;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
