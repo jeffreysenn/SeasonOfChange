@@ -18,11 +18,11 @@ public class RoundController : MonoBehaviour {
     int _playerCount;
     public int _pointsToWin = 3;
 
-
+    SeasonController _seasonController;
     PlayerInfo[] _players;
 
 	void Start () {
-        if (!_instance) {
+        if (!_instance || _instance == this) {
             _instance = this;
         }
         else {
@@ -30,7 +30,7 @@ public class RoundController : MonoBehaviour {
             Destroy(this);
         }
 
-
+        _seasonController = FindObjectOfType<SeasonController>();
 
         PlayerController[] temp = FindObjectsOfType<PlayerController>();
         _playerCount = temp.Length;
@@ -47,7 +47,7 @@ public class RoundController : MonoBehaviour {
 
     static public PlayerInfo GetPlayerInfo(int playerIndex) {
         if(playerIndex <= Instance._playerCount) {
-            return Instance._players[playerIndex--];
+            return Instance._players[playerIndex-1];
         }
         else {
             Debug.LogError("GetPlayerInfo: playerIndex out of range.");
@@ -57,7 +57,7 @@ public class RoundController : MonoBehaviour {
 
     void SetPlayerInfo(int playerIndex, PlayerInfo info) {
         if (playerIndex <= _playerCount) {
-            _players[playerIndex--] = info;
+            _players[playerIndex-1] = info;
         }
         else {
             Debug.LogError("SetPlayerInfo: playerIndex out of range.");
@@ -65,6 +65,10 @@ public class RoundController : MonoBehaviour {
     }
 
     static public void PlayerDeathCallback(int playerIndex) {
+        if(Instance.GetSeason() == SEASON.NoSeason) {
+            GetPlayerInfo(playerIndex).Controller.ResetCharacter();
+            return;
+        }
         PlayerInfo info = GetPlayerInfo(playerIndex);
         info.IsActive = false;
 
@@ -95,8 +99,15 @@ public class RoundController : MonoBehaviour {
             }
             info.IsActive = true;
             SetPlayerInfo(i, info);
-            //TODO: Respawn characters.
+            info.Controller.ResetCharacter();
         }
+    }
+
+    SEASON GetSeason() {
+        if (!_seasonController) {
+            _seasonController = FindObjectOfType<SeasonController>();
+        }
+        return _seasonController.GetCurrentSeason();
     }
 }
 

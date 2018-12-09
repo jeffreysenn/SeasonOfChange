@@ -10,11 +10,9 @@ public class EggDeath : MonoBehaviour {
 	{
 		if (col.CompareTag("DeathTerrain"))
 		{
-            //Instantiate (explode, transform.position, transform.rotation);
             RoundController.PlayerDeathCallback(GetComponent<CharacterInfo>().playerIndex);
             SoundManager.PlaySFXRandomized(deathSound);
             Destroy(gameObject);
-			print("Meow");
 		}
 	}
 }
